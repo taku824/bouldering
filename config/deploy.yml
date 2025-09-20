@@ -21,12 +21,9 @@ proxy:
   ssl: false
   host: 16.176.165.26
 
-# Disable health checks for now
-healthcheck:
-  interval: 30s
-  timeout: 5s
-  retries: 3
-  path: /
+# Disable health checks completely
+# healthcheck:
+#   path: /up
 
 # Credentials for your image host.
 registry:
