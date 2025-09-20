@@ -16,10 +16,17 @@ COPY . /myapp
 # Install npm dependencies
 RUN npm install
 
+# Build assets for production
+RUN RAILS_ENV=production bin/vite build
+RUN RAILS_ENV=production bin/rails assets:precompile
+
+# Database setup
+RUN bin/rails db:create db:migrate
+
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 
-EXPOSE 3000 3035
+EXPOSE 3000
 
-CMD ["sh", "-c", "npm run dev & rails server -b 0.0.0.0"]
+CMD ["rails", "server", "-b", "0.0.0.0"]

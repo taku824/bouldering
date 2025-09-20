@@ -12,11 +12,7 @@ import {
   Message
 } from 'semantic-ui-react';
 
-interface HomePageProps {
-  [key: string]: any;
-}
-
-const HomePage: React.FC<HomePageProps> = (props) => {
+const HomePage = (props) => {
   return (
     <Container style={{ marginTop: '2em' }}>
       {/* ヘッダーセクション */}
