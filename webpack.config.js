@@ -5,6 +5,18 @@ module.exports = {
   output: {
     filename: 'application.js',
     path: path.resolve(__dirname, 'app/assets/builds'),
+    publicPath: '/assets/'
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'app/assets/builds'),
+    },
+    compress: true,
+    port: 3035,
+    host: '0.0.0.0',
+    hot: true,
+    liveReload: true,
+    watchFiles: ['app/javascript/**/*', 'app/views/**/*'],
   },
   module: {
     rules: [
