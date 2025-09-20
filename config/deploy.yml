@@ -22,6 +22,10 @@ proxy:
   host: 16.176.165.26
 
 # Completely disable health checks
+healthcheck:
+  path: /
+  interval: 1000s
+  timeout: 1000s
 
 # Credentials for your image host.
 registry:
