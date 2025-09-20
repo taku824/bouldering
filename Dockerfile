@@ -18,7 +18,7 @@ RUN npm install
 
 # Build assets for production
 RUN RAILS_ENV=production bin/vite build
-RUN RAILS_ENV=production bin/rails assets:precompile
+RUN RAILS_ENV=production SECRET_KEY_BASE=dummy bin/rails assets:precompile
 
 # Database setup
 RUN bin/rails db:create db:migrate
