@@ -1,6 +1,8 @@
 FROM ruby:3.3
 
-RUN apt-get update -qq && apt-get install -y postgresql-client sqlite3
+RUN apt-get update -qq && apt-get install -y postgresql-client sqlite3 curl
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get install -y nodejs
 
 RUN mkdir /myapp
 WORKDIR /myapp

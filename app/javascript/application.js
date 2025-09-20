@@ -1,3 +1,8 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails"
-import "controllers"
+// React on Rails
+import ReactOnRails from 'react-on-rails';
+import HelloWorld from './components/HelloWorld';
+
+// Register React components
+ReactOnRails.register({
+  HelloWorld
+});
