@@ -21,6 +21,13 @@ proxy:
   ssl: false
   host: 16.176.165.26
 
+# Disable health checks for now
+healthcheck:
+  interval: 30s
+  timeout: 5s
+  retries: 3
+  path: /
+
 # Credentials for your image host.
 registry:
   # Specify the registry server, if you're not using Docker Hub
