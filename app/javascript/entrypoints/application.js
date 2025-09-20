@@ -1,7 +1,7 @@
 // Application JavaScript
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import HomePage from './components/HomePage.tsx';
+import HomePage from '../components/HomePage.tsx';
 
 console.log('Application.js loaded');
 console.log('React:', React);

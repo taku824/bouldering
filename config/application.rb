@@ -23,5 +23,14 @@ module Bouldering
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    
+    # ReactOnRails configuration (commented out for now)
+    # config.react.server_renderer_pool_size = 1
+    # config.react.server_renderer_timeout = 20
+    # config.react.server_renderer = ReactOnRails::ServerRendering::ExecJSRenderer
+    
+    # JavaScript bundling configuration
+    config.assets.paths << Rails.root.join("app/assets/builds")
+    config.assets.precompile += %w[application.js]
   end
 end
