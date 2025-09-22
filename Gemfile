@@ -18,7 +18,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # React on Rails - React components in Rails
-gem "react_on_rails", "~> 13.0"
+gem "react_on_rails", "~> 16.0"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
