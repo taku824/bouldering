@@ -47,6 +47,10 @@ jobs:
           eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/bouldering-key.pem
 
+      - name: Clean up server disk space
+        run: |
+          ssh -i ~/.ssh/bouldering-key.pem ubuntu@16.176.165.26 "docker system prune -af --volumes || true"
+
       - name: Deploy with Kamal
         run: |
           kamal build --verbose
