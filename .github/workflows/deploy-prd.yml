@@ -31,7 +31,7 @@ jobs:
         run: bin/vite build
 
       - name: Install Kamal
-        run: gem install kamal
+        run: gem install kamal -v 2.6.0
 
       - name: Create secrets file
         run: |
