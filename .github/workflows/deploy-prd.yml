@@ -49,5 +49,5 @@ jobs:
 
       - name: Deploy with Kamal
         run: |
-          kamal build
-          kamal deploy
+          kamal build --verbose
+          kamal deploy --verbose
