@@ -20,8 +20,8 @@ RUN npm install
 RUN RAILS_ENV=production bin/vite build
 RUN RAILS_ENV=production SECRET_KEY_BASE=dummy bin/rails assets:precompile
 
-# Database setup
-RUN bin/rails db:create db:migrate
+# Database setup (moved to entrypoint for production)
+# RUN bin/rails db:create db:migrate
 
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
