@@ -46,10 +46,13 @@ jobs:
           chmod 600 ~/.ssh/bouldering-key.pem
           eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/bouldering-key.pem
+          echo "Host 16.176.165.26" >> ~/.ssh/config
+          echo "  StrictHostKeyChecking no" >> ~/.ssh/config
+          echo "  UserKnownHostsFile /dev/null" >> ~/.ssh/config
 
       - name: Clean up server disk space
         run: |
-          ssh -i ~/.ssh/bouldering-key.pem ubuntu@16.176.165.26 "docker system prune -af --volumes || true"
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/bouldering-key.pem ubuntu@16.176.165.26 "docker system prune -af --volumes || true"
 
       - name: Deploy with Kamal
         run: |
