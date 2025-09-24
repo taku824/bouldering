@@ -19,7 +19,7 @@ const HomePage = (props) => {
       <Segment inverted color='teal' textAlign='center' style={{ padding: '4em 0em' }}>
         <Header as='h1' inverted>
           <Icon name='climbing' />
-          ボルダリングアプリ(aaa)
+          ボルダリングアプリ(bbb)
         </Header>
         <Header as='h2' inverted>
           ようこそ！あなたのクライミングライフをサポートします
