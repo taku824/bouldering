@@ -9,7 +9,11 @@ servers:
   web:
     - 16.176.165.26
 
-# No health check configuration - use default behavior
+# Extend health check interval to allow more time for app startup
+healthcheck:
+  interval: 20s
+  timeout: 10s
+  retries: 3
 
 # Credentials for your image host.
 registry:
