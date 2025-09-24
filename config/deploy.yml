@@ -1,0 +1,22 @@
+service: bouldering
+image: astaxanthin/bouldering
+servers:
+  web:
+    - 16.176.165.26
+registry:
+  username: astaxanthin
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+env:
+  secret:
+    - RAILS_MASTER_KEY
+  clear:
+    WEB_CONCURRENCY: 2
+volumes:
+  - "bouldering_storage:/rails/storage"
+builder:
+  arch: amd64
+ssh:
+  user: ubuntu
+  keys:
+    - ~/.ssh/bouldering-key.pem

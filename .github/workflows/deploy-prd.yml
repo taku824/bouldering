@@ -57,4 +57,4 @@ jobs:
       - name: Deploy with Kamal
         run: |
           kamal build --verbose
-          kamal deploy --verbose --wait-time 60
+          kamal deploy --verbose
