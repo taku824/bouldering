@@ -44,6 +44,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/bouldering-key.pem
           chmod 600 ~/.ssh/bouldering-key.pem
+          eval "$(ssh-agent -s)"
           ssh-add ~/.ssh/bouldering-key.pem
 
       - name: Deploy with Kamal
