@@ -33,10 +33,13 @@ jobs:
       - name: Install Kamal
         run: gem install kamal
 
+      - name: Create secrets file
+        run: |
+          mkdir -p .kamal
+          echo "KAMAL_REGISTRY_PASSWORD=${{ secrets.DOCKER_HUB_TOKEN }}" > .kamal/secrets
+          echo "RAILS_MASTER_KEY=${{ secrets.RAILS_MASTER_KEY }}" >> .kamal/secrets
+
       - name: Deploy with Kamal
-        env:
-          KAMAL_REGISTRY_PASSWORD: ${{ secrets.DOCKER_HUB_TOKEN }}
-          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         run: |
           kamal build
           kamal deploy
