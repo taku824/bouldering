@@ -30,6 +30,9 @@ jobs:
       - name: Build assets
         run: bin/vite build
 
+      - name: Install Kamal
+        run: gem install kamal
+
       - name: Deploy with Kamal
         env:
           KAMAL_REGISTRY_PASSWORD: ${{ secrets.DOCKER_HUB_TOKEN }}
