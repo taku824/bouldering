@@ -39,6 +39,13 @@ jobs:
           echo "KAMAL_REGISTRY_PASSWORD=${{ secrets.DOCKER_HUB_TOKEN }}" > .kamal/secrets
           echo "RAILS_MASTER_KEY=${{ secrets.RAILS_MASTER_KEY }}" >> .kamal/secrets
 
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/bouldering-key.pem
+          chmod 600 ~/.ssh/bouldering-key.pem
+          ssh-add ~/.ssh/bouldering-key.pem
+
       - name: Deploy with Kamal
         run: |
           kamal build
