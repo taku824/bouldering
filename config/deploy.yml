@@ -9,9 +9,12 @@ servers:
   web:
     - 16.176.165.26
 
-# Disable health checks
-healthcheck:
-  disable: true
+# Use Docker options to disable health checks
+options:
+  health-cmd: "true"
+  health-interval: 30s
+  health-timeout: 1s
+  health-retries: 1
 
 # Credentials for your image host.
 registry:
