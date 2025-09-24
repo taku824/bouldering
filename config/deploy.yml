@@ -12,6 +12,7 @@ env:
     - RAILS_MASTER_KEY
   clear:
     WEB_CONCURRENCY: 2
+    RAILS_ENV: production
 volumes:
   - "bouldering_storage:/rails/storage"
 builder:
